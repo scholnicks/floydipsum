@@ -41,7 +41,7 @@ class Song:
 def main() -> None:
     """Main Method"""
     global arguments
-    arguments = docopt(__doc__, version="floydipsum 0.1.0")
+    arguments = docopt(__doc__, version="floydipsum 1.0.0")
 
     if arguments["--save"]:
         saveLyricsToFile()
