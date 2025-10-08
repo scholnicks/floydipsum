@@ -13,8 +13,9 @@ Usage:
 Options:
     -d, --debug         Enable debug mode
     -h, --help          Show this help screen
-    -n, --number=<num>  Number of songs to download [default: 20]
+    -n, --number=<num>  Number of songs to download [default: 50]
     -s, --save          Save lyrics to file
+    -t, --title         Print the song title along with the lyrics
     --version           Prints the version
 """
 
@@ -44,10 +45,12 @@ def main() -> None:
 
     if arguments["--save"]:
         saveLyricsToFile()
-
-    song: Song = random.choice(readLyricsFromFile())
-    print(f"\n{song.title}\n\n{song.lyrics}\n")
-
+    else:
+        song: Song = random.choice(readLyricsFromFile())
+        if arguments["--title"]:
+            print(f"{song.title}\n\n{song.lyrics}\n")
+        else:
+            print(f"\n{song.lyrics}\n")
     sys.exit(0)
 
 
@@ -55,8 +58,7 @@ def readLyricsFromFile() -> list[Song]:
     """Reads lyrics from a file and returns a list of Song objects"""
     try:
         with open(jsonPath(), "r") as f:
-            songs_data = json.load(f)
-            return [Song(**song) for song in songs_data]
+            return [Song(**song) for song in json.load(f)]
     except FileNotFoundError:
         print(f"No lyrics file found at {jsonPath()}. Please run with --save to create one.")
         sys.exit(1)
@@ -66,8 +68,8 @@ def saveLyricsToFile() -> None:
     """Fetches lyrics from Genius and saves them to a file"""
     from lyricsgenius import Genius
 
-    genius = Genius(os.environ.get("GENIUS_ACCESS_TOKEN", ""))
-    genius.verbose = False
+    genius: Genius = Genius(os.environ.get("GENIUS_ACCESS_TOKEN", ""))
+    genius.verbose = not arguments["--debug"]
     genius.skip_non_songs = False
     genius.excluded_terms = ["(Remix)", "(Live)"]
     genius.remove_section_headers = True
