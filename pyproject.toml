@@ -5,7 +5,7 @@ name = "floydipsum"
 version = "1.0.0"
 description = "Generates Lorem Ipsum text using Pink Floyd lyrics"
 authors = [
-    {name = "Steve Scholnick",email = "scholnicks@gmail.com"}
+    {name="Steve Scholnick", email="scholnicks@gmail.com"}
 ]
 readme = "README.md"
 license="MIT"
@@ -25,9 +25,9 @@ classifiers = [
 keywords = ["lorem", "ipsum", "text", "generator", "floyd", "pink", "lyrics", "utility", "command-line", "cli"]
 
 [project.urls]
-homepage="https://pypi.org/project/floydipsum/"
-repository="https://github.com/scholnicks/floydipsum/"
-Issues = "https://github.com/scholnicks/floydipsum/issues"
+homepage = "https://pypi.org/project/floydipsum/"
+repository = "https://github.com/scholnicks/floydipsum/"
+issues = "https://github.com/scholnicks/floydipsum/issues"
 
 [tool.poetry]
 packages = [{include = "floydipsum", from = "src"}]
