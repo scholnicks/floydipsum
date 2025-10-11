@@ -5,7 +5,7 @@
 # The lyricsipsum source code is published under a MIT license.
 
 """
-lyricsipsum: Generates Lorem Ipsum text using song lyrics lyrics
+lyricsipsum: Generates Lorem Ipsum text using a download song's lyrics
 
 Usage:
     lyricsipsum [options]
@@ -13,7 +13,7 @@ Usage:
 Options:
     -h, --help          Show this help screen
     -n, --number=<num>  Number of songs to download [default: 50]
-    -s, --save=<artist> Save lyrics to file for <artist>
+    -s, --save=<artist> Save lyrics for <artist>
     -t, --title         Print the song title along with the lyrics
     -v, --verbose       Enable verbose mode
     --version           Prints the version
@@ -67,7 +67,6 @@ def readLyricsFromFile() -> list[Song]:
 
 def saveLyricsToFile() -> None:
     """Fetches lyrics from Genius and saves them to a file"""
-
     genius: Genius = Genius(os.environ.get("GENIUS_ACCESS_TOKEN", ""))
     genius.verbose = arguments["--verbose"]
     genius.skip_non_songs = True
