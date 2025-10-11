@@ -22,7 +22,7 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Topic :: Utilities"
 ]
-keywords = ["lorem", "ipsum", "text", "generator", "floyd", "pink", "lyrics", "utility", "command-line", "cli"]
+keywords = ["lorem", "ipsum", "text", "generator", "lyrics", "utility", "command-line", "cli"]
 
 [project.urls]
 homepage = "https://pypi.org/project/lyricsipsum/"
