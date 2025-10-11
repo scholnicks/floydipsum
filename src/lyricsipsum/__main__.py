@@ -26,9 +26,9 @@ import re
 import sys
 from dataclasses import asdict, dataclass
 from pathlib import Path
-from lyricsgenius import Genius
 
 from docopt import docopt
+from lyricsgenius import Genius
 
 arguments: dict = {}
 
@@ -68,7 +68,7 @@ def readLyricsFromFile() -> list[Song]:
 def saveLyricsToFile() -> None:
     """Fetches lyrics from Genius and saves them to a file"""
 
-    genius: Genius = Genius(os.environ.get("GENIUS_ACCESS_TOKEN",""))
+    genius: Genius = Genius(os.environ.get("GENIUS_ACCESS_TOKEN", ""))
     genius.verbose = arguments["--verbose"]
     genius.skip_non_songs = True
     genius.excluded_terms = ["(Remix)", "(Live)"]
