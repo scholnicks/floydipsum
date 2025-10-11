@@ -1,24 +1,13 @@
-__pycache__/
-
 *.json
-
-# Distribution / packaging
-.Python
-build/
-dist/
-downloads/
-MANIFEST
-
-# Environments
-.env
-.envrc
+.vscode
+.idea
 .venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+*.pyc
+*.pyo
+*.pyd
 
+__pycache__
+dist
 .idea/
 .vscode/
 
