@@ -1,10 +1,10 @@
-# floydipsum
+# lyricsipsum
 
-floydipsum randomly selects a Pink Floyd song's lyrics as a replacement for standard lorem ipsum text.
+lyricsipsum randomly selects a downloaded song lyrics as a replacement for standard boring lorem ipsum text.
 
 ```
 Usage:
-    floydipsum [options]
+    lyricsipsum [options]
 
 Options:
     -d, --debug         Enable debug mode
@@ -18,9 +18,9 @@ Options:
 ## Installation
 
 ```bash
-pip install floydipsum
+pip install lyricsipsum
 ```
 
 ## License
 
-floydipsum is freeware released under the [MIT License](https://github.com/scholnicks/floydipsum/blob/main/LICENSE).
+lyricsipsum is freeware released under the [MIT License](https://github.com/scholnicks/lyricsipsum/blob/main/LICENSE).
