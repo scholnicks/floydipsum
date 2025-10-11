@@ -1,6 +1,6 @@
 # lyricsipsum
 
-lyricsipsum randomly selects a downloaded song lyrics as a replacement for standard boring lorem ipsum text.
+lyricsipsum randomly selects a downloaded song's lyrics as a replacement for standard boring lorem ipsum text.
 
 ```
 Usage:
