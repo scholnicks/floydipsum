@@ -70,7 +70,7 @@ def saveLyricsToFile() -> None:
 
     genius: Genius = Genius(os.environ.get("GENIUS_ACCESS_TOKEN",""))
     genius.verbose = arguments["--verbose"]
-    genius.skip_non_songs = False
+    genius.skip_non_songs = True
     genius.excluded_terms = ["(Remix)", "(Live)"]
     genius.remove_section_headers = True
     genius.timeout = 15
